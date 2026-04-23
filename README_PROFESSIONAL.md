@@ -113,39 +113,6 @@ Edit `server.py` to modify server parameters:
 # port: TCP port number (1024-65535)
 ```
 
-#### Configuration Examples
-
-**Local Development (Default)**
-```python
-server.bind(("localhost", 5000))
-client.connect(("localhost", 5000))
-```
-
-**Network Deployment**
-```python
-server.bind(("0.0.0.0", 5000))
-client.connect(("<server_ip>", 5000))
-```
-
-**Alternative Port**
-```python
-server.bind(("localhost", 8080))
-client.connect(("localhost", 8080))
-```
-
-### Client Configuration
-
-Edit `client.py` to modify client parameters:
-
-```python
-# server_host: Target server IP or hostname
-client.connect(("server_host", 5000))
-
-# buffer_size: Receive buffer (Line: sock.recv(1024))
-# Default: 1024 bytes; adjust based on message size requirements
-```
-
----
 
 ## Usage
 
@@ -554,23 +521,6 @@ with clients_lock:
     clients[conn] = username  # Protected write
 ```
 
-### Security Recommendations
-
-**Minimum for Development**:
-- [ ] Add TLS/SSL encryption
-- [ ] Implement basic authentication
-- [ ] Add input validation
-- [ ] Use thread locks
-
-**Minimum for Production**:
-- [ ] Complete above recommendations
-- [ ] Comprehensive logging and monitoring
-- [ ] Rate limiting and DDoS protection
-- [ ] Regular security audits
-- [ ] Penetration testing
-- [ ] Incident response procedures
-
----
 
 ## Troubleshooting
 
@@ -731,29 +681,3 @@ FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
 ```
 
 ---
-
-## Additional Resources
-
-### Network Programming
-
-- [Python Socket Documentation](https://docs.python.org/3/library/socket.html)
-- [RFC 793 - TCP Protocol Specification](https://tools.ietf.org/html/rfc793)
-- [Beej's Guide to Network Programming](https://beej.us/guide/bgnet/)
-
-### Concurrency
-
-- [Python Threading Documentation](https://docs.python.org/3/library/threading.html)
-- [Effective Python: Concurrency](https://effectivepython.com/)
-- [Python GIL Explained](https://realpython.com/python-gil/)
-
-### Security
-
-- [OWASP Top 10](https://owasp.org/Top10/)
-- [CWE/SANS Top 25](https://cwe.mitre.org/top25/)
-- [Python Security Best Practices](https://python.readthedocs.io/en/latest/library/security_warnings.html)
-
----
-
-**Version**: 1.0.0  
-**Last Updated**: April 2024  
-**Status**: Maintained
