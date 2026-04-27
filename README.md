@@ -463,8 +463,8 @@ This implementation is **NOT suitable for production** without significant harde
 
 **Mitigation**:
 - Implement access control lists (ACLs)
-- Separate private and public channels
-- Enforce message filtering
+- Separate private and public channels.
+- Enforce message filtering.
 
 #### 4. No Input Validation
 
